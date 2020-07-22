@@ -1,0 +1,11 @@
+ion-avatar {
+    height: 200px;
+    width: 200px;
+    img {
+        object-fit: contain;
+    }
+}
+
+.flex {
+    display: flex;
+}

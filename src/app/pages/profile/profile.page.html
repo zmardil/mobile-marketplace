@@ -5,6 +5,63 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content >
+  
+  <ion-grid class="ion-padding" *ngIf="userDetails && !edit">
+    <ion-row class="">
+      <ion-col class="ion-justify-content-center ion-align-items-center flex">
+        <ion-avatar>
+          <img src="https://i.pravatar.cc/150?u=fake@pravatar.com">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      
+      <ion-col>
+        <ion-text color="secondary" class="ion-text-center">
+          <h1>{{ userDetails.firstName }} {{ userDetails.lastName }}</h1>
+        </ion-text>
+        <p class="ion-text-center">{{ userDetails.phone }}</p>
 
+        <ion-button (click)="edit = !edit" expand="block">Edit</ion-button>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="ion-padding" *ngIf="edit || !userDetails">
+    <ion-row class="">
+      <ion-col class="ion-justify-content-center ion-align-items-center flex">
+        <ion-avatar>
+          <img [src]="">
+          <ion-fab vertical="bottom" horizontal="center" class="ion-margin-top">
+            <ion-fab-button color="secondary" (click)="openActionsheet()">
+              <ion-icon name="pencil" mode="md"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+
+      <ion-col>
+
+        <form [formGroup]="userDetailsForm">
+
+          <ion-label position="stacked">First Name <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input required type="text" formControlName="firstName" [(ngModel)]="userDetails.firstName"></ion-input>
+  
+          <ion-label position="stacked">Last Name <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input required type="text" formControlName="lastName" [(ngModel)]="userDetails.lastName"></ion-input>
+  
+          <ion-label position="stacked">Phone<ion-text color="danger">*</ion-text></ion-label>
+          <ion-input required type="text" formControlName="phone" [(ngModel)]="userDetails.phone"></ion-input>
+  
+          <ion-button (click)="onClickSave()" expand="block">Update</ion-button>
+        </form>
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
 </ion-content>
