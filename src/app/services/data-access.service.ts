@@ -20,6 +20,8 @@ export class DataAccessService {
    
   }
 
-
+  getAllListings() {
+    return this.afs.collectionGroup('listings').valueChanges();
+  }
   
 }
