@@ -1,10 +1,27 @@
 <ion-header>
   <ion-toolbar color="secondary">
-   
     <ion-title>Home</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar no-border>
+    <ion-searchbar [(ngModel)]="searchText" class="ion-margin-top">
+    </ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-list *ngIf="listings">
+    <ion-item *ngFor="let listing of search()">
+      <ion-thumbnail slot="start">
+        <img [src]="listing.photoUrl">
+      </ion-thumbnail>
+      <ion-label>
+        <h3> {{ listing.title }} </h3>
+        <p> {{ listing.description }}</p>
+        <p> ${{ listing.price }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
