@@ -14,6 +14,10 @@ export class DataAccessService {
      return this.afs.collection<any>(`userListings/${userId}/listings`).add(listing);
      
   }
+  
+  addUserDetails(userId, userDetails) {
+    return this.afs.collection<any>(`users`).doc(userId).update(userDetails);
+  }
 
   getListings(userId){
     return this.afs.collection<any>(`userListings/${userId}/listings`).valueChanges();
@@ -22,6 +26,10 @@ export class DataAccessService {
 
   getAllListings() {
     return this.afs.collectionGroup('listings').valueChanges();
+  }
+  
+  getUserDetails(userId) {
+    return this.afs.collection<any>('users').doc(userId).valueChanges();
   }
   
 }
