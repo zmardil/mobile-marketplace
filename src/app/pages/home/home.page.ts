@@ -12,8 +12,8 @@ export class HomePage implements OnInit {
   searchText: string = '';
   
   constructor(private dataSvc: DataAccessService) {
-    this.dataSvc.getAllListings().subscribe(result => {
-      this.listings = result;
+    this.dataSvc.getAllListings().subscribe(data => {
+      this.listings = data;
     })
   }
 
