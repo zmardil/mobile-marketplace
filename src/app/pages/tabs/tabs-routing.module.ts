@@ -20,6 +20,10 @@ const routes: Routes = [
         loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
       },
       {
+        path: 'update-profile',
+        loadChildren: () => import('../update-profile/update-profile.module').then(m => m.UpdateProfilePageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
