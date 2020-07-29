@@ -28,7 +28,7 @@ export class DataAccessService {
     return this.afs.collectionGroup('listings').valueChanges();
   }
   
-  getUserDetails(userId) {
+  getUser(userId) {
     return this.afs.collection<any>('users').doc(userId).valueChanges();
   }
   

@@ -59,7 +59,7 @@ export class AuthenticationService {
   setEmailVerified(value, uid, user) {
     this.setUserLocal(user);
     this.afStore.doc(`users/${uid}`).set({
-      username: user.email,
+      email: user.email,
       uid:user.uid,
       emailVerified: value
     }, { merge:true });
