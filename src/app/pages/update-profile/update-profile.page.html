@@ -12,6 +12,11 @@
   <div class="ion-margin-vertical">
     <ion-avatar>
       <img src="../../../assets/icon/avatar.svg">
+      <ion-fab (click)="openActionSheet()">
+        <ion-fab-button color="secondary">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
     </ion-avatar>
   </div>
   <form class="ion-margin-top">
@@ -30,7 +35,7 @@
       </ion-item>
     </ion-list>
     <div class="ion-padding">
-      <ion-button expand="block" type="submit" class="ion-no-margin">Update Profile</ion-button>
+      <ion-button expand="block" type="submit" class="ion-no-margin" color="secondary">Update Profile</ion-button>
     </div>
   </form>
 
