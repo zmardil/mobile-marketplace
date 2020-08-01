@@ -149,7 +149,7 @@ export class MyListingsAddPage implements OnInit {
     this.fileName = 'ListItem';
    
     // The storage path
-    const path = `images/${new Date().getTime()}_${this.fileName}.jpg`;
+    const path = `images/listings/${new Date().getTime()}_${this.fileName}.jpg`;
 
     //File reference
     const fileRef = this.storage.ref(path);
