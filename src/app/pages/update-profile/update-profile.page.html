@@ -11,7 +11,7 @@
   
   <div class="ion-margin-vertical">
     <ion-avatar>
-      <img src="../../../assets/icon/avatar.svg">
+      <img [src]="data.image">
       <ion-fab (click)="openActionSheet()">
         <ion-fab-button color="secondary">
           <ion-icon name="add"></ion-icon>
@@ -19,23 +19,23 @@
       </ion-fab>
     </ion-avatar>
   </div>
-  <form class="ion-margin-top">
+  <form class="ion-margin-top" [formGroup]="form">
     <ion-list lines="full" class="ion-no-margin ion-no-padding">
       <ion-item>
         <ion-label position="stacked">First Name</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" formControlName="firstName" [(ngModel)]="data.firstName"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="stacked" >Last Name</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" formControlName="lastName" [(ngModel)]="data.lastName"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Phone</ion-label>
-        <ion-input type="tel"></ion-input>
+        <ion-input type="tel" formControlName="phone" [(ngModel)]="data.phone"></ion-input>
       </ion-item>
     </ion-list>
     <div class="ion-padding">
-      <ion-button expand="block" type="submit" class="ion-no-margin" color="secondary">Update Profile</ion-button>
+      <ion-button expand="block" type="submit" class="ion-no-margin" color="secondary" (click)="update()">Update Profile</ion-button>
     </div>
   </form>
 

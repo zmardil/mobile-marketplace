@@ -15,7 +15,7 @@ export class DataAccessService {
      
   }
   
-  addUserDetails(userId, userDetails) {
+  updateUserDetails(userId, userDetails) {
     return this.afs.collection<any>(`users`).doc(userId).update(userDetails);
   }
 
