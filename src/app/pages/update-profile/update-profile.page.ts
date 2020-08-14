@@ -45,7 +45,7 @@ export class UpdateProfilePage implements OnInit {
           this.data.firstName = this.user.firstName;
           this.data.lastName = this.user.lastName;
           this.data.phone = this.user.phone;
-          this.data.image = this.user.image ;
+          if(this.user.image) this.data.image = this.user.image;
         }
       );
 

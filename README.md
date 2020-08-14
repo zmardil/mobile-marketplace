@@ -1,6 +1,6 @@
 ## Group A
 
-An "App Developement" Assignment by Group A, University of Jaffna.
+An "App Development" Assignment by Group A, University of Jaffna.
 
 ### Members
 
